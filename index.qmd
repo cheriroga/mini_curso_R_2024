@@ -1,0 +1,11 @@
+---
+title: "Mini Curso R"
+toc: false
+format: 
+  html: 
+    background-image: "images/template.png"
+---
+
+# Aulas
+
+[Aula 1](Aula_1.qmd)

@@ -1,0 +1,121 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Mini Curso R - 2024",
+    "section": "",
+    "text": "Aulas\nAula 1"
+  },
+  {
+    "objectID": "Aula_1.html#constat",
+    "href": "Aula_1.html#constat",
+    "title": "Aula 1 Mini curso R",
+    "section": "CONSTAT",
+    "text": "CONSTAT\nSomos a Empresa Júnior do Curso de Graduação em Estatística da UFES, que tem como finalidade proporcionar a seus membros as condições necessárias para a aplicação prática de\nconhecimentos teóricos relativos ao curso de Estatística e a toda área de formação, promover uma vivência empresarial e desenvolver as habilidades empreendedoras dos estudantes, sob a missão de transformar dados em resultados.\n\nContato: constatufes@gmail.com"
+  },
+  {
+    "objectID": "Aula_1.html#serviços-prestados",
+    "href": "Aula_1.html#serviços-prestados",
+    "title": "Aula 1 Mini curso R",
+    "section": "Serviços prestados",
+    "text": "Serviços prestados\n\nEngenharia de dados;\nModelo de regressão preditivo;\nCensos de qualquer natureza;\nPesquisa de mercado;\nLimpeza de dados;\nAnálise descritiva;\nPlanejamento amostral;\nAnálise de regressão."
+  },
+  {
+    "objectID": "Aula_1.html#curso-r",
+    "href": "Aula_1.html#curso-r",
+    "title": "Aula 1 Mini curso R",
+    "section": "Curso R",
+    "text": "Curso R\nEstrutura das aulas\n\nTeoria;\nExercícios;\nDúvidas lista/ aula anterior.\n\nTrabalho e certificado\nO certificado será liberado após a entrega do trabalho.\nTrabalho\nO trabalho consiste em entregar uma análise de um banco de dados usando os ítens aprendidos em aula."
+  },
+  {
+    "objectID": "Aula_1.html#utilização-do-rstudio",
+    "href": "Aula_1.html#utilização-do-rstudio",
+    "title": "Aula 1 Mini curso R",
+    "section": "Utilização do RStudio",
+    "text": "Utilização do RStudio\n\nCriação análises;\nRmarkdown: Relatórios em PDF, HTML, Word;\nQuarto: Apresentações em PDF, HTML;\nShiny: dashboard;\nOutros."
+  },
+  {
+    "objectID": "Aula_1.html#r",
+    "href": "Aula_1.html#r",
+    "title": "Aula 1 Mini curso R",
+    "section": "R",
+    "text": "R"
+  },
+  {
+    "objectID": "Aula_1.html#rstudio",
+    "href": "Aula_1.html#rstudio",
+    "title": "Aula 1 Mini curso R",
+    "section": "RStudio",
+    "text": "RStudio"
+  },
+  {
+    "objectID": "Aula_1.html#telas",
+    "href": "Aula_1.html#telas",
+    "title": "Aula 1 Mini curso R",
+    "section": "Telas",
+    "text": "Telas\n\nEditor/Scripts: É onde escrever os códigos. Arquivos do tipo .R.\nConsole: Executar os comandos e ver os resultados.\nEnviroment: Painel com todos os objetos criados.\nHistory: História dos comandos executados.\nFiles: Navegar em pastas e arquivos.\nPlots: Onde os gráficos serão apresentados.\nPackages: Pacotes instalados (sem ticar) e habilitados (ticados).\nHelp: Retorna o tutorial de ajuda do comando solicitado com help() ou ?comando. Veremos melhor como pedir ajuda no R ainda nessa aula."
+  },
+  {
+    "objectID": "Aula_1.html#back-end-vs-front-end",
+    "href": "Aula_1.html#back-end-vs-front-end",
+    "title": "Aula 1 Mini curso R",
+    "section": "Back-end VS Front-end",
+    "text": "Back-end VS Front-end\nFront-end é a parte que os usuários veem e interagem, back-end é a parte que faz o programa funcionar"
+  },
+  {
+    "objectID": "Aula_1.html#objetos-em-r",
+    "href": "Aula_1.html#objetos-em-r",
+    "title": "Aula 1 Mini curso R",
+    "section": "Objetos em R",
+    "text": "Objetos em R\nExistem cinco classes básicas no R:\n\ncharacter: “UAH!”\nnumeric: 0.95 (números reais)\ninteger: 100515 (inteiros)\ncomplex: 2 + 5i (números complexos, a + bi)\nlogical: TRUE (booleanos, TRUE/FALSE)"
+  },
+  {
+    "objectID": "Aula_1.html#exemplo",
+    "href": "Aula_1.html#exemplo",
+    "title": "Aula 1 Mini curso R",
+    "section": "Exemplo",
+    "text": "Exemplo\nVamos atribuir a x a string banana.\nx &lt;- banana\nErro: objeto 'banana' não encontrado\nx &lt;- \"banana\"\nx\n[1] \"banana\""
+  },
+  {
+    "objectID": "Aula_1.html#função-class",
+    "href": "Aula_1.html#função-class",
+    "title": "Aula 1 Mini curso R",
+    "section": "Função class()",
+    "text": "Função class()\n\ny &lt;- \"ola\"\n\nclass(y)\n\n[1] \"character\"\n\n\n\nx &lt;- 2.5\n\nclass(x)\n\n[1] \"numeric\""
+  },
+  {
+    "objectID": "Aula_1.html#exemplo-1",
+    "href": "Aula_1.html#exemplo-1",
+    "title": "Aula 1 Mini curso R",
+    "section": "Exemplo",
+    "text": "Exemplo\n\nsum(1, 2) \n\n[1] 3\n\n\n\nnumeros &lt;- c(10, 20, 30, 40) \n\nmean(numeros) \n\n[1] 25\n\n\n\nfrutas &lt;- c(\"Maçã\", \"Banana\", \"Laranja\", \"Uva\")\n# Complete o código abaixo:\nqtd &lt;- length(frutas)\nprint(qtd)\n\n[1] 4\n\n\n\nanimais &lt;- c(\"Gato\", \"Cachorro\", \"Gato\", \"Passarinho\", \"Gato\", \"Cachorro\")\n# Complete o código:\nfrequencia &lt;- table(animais)\nprint(frequencia)\n\nanimais\n  Cachorro       Gato Passarinho \n         2          3          1"
+  },
+  {
+    "objectID": "Aula_1.html#numérico-numeric",
+    "href": "Aula_1.html#numérico-numeric",
+    "title": "Aula 1 Mini curso R",
+    "section": "Numérico (numeric)",
+    "text": "Numérico (numeric)\n\nx &lt;- 4.5 # O . é o separador decimal\nx\n\n[1] 4.5\n\nclass(x)\n\n[1] \"numeric\"\n\nis.numeric(x) # Confere se o objeto é um da classe numeric\n\n[1] TRUE\n\ny&lt;-1E4 # Notação científica\ny\n\n[1] 10000\n\nclass(y)\n\n[1] \"numeric\"\n\nis.numeric(y) \n\n[1] TRUE"
+  },
+  {
+    "objectID": "Aula_1.html#caracter-character",
+    "href": "Aula_1.html#caracter-character",
+    "title": "Aula 1 Mini curso R",
+    "section": "Caracter (character)",
+    "text": "Caracter (character)\n\nx &lt;- \"floresta\" # Sempre entre aspas \nx \n\n[1] \"floresta\"\n\nclass(x) \n\n[1] \"character\"\n\nis.character(x) \n\n[1] TRUE\n\ny &lt;- \"Diversidade (Simpson)\" # Pode conter espaços ou acentos \ny \n\n[1] \"Diversidade (Simpson)\"\n\nclass(y) \n\n[1] \"character\"\n\nis.character(y) \n\n[1] TRUE"
+  },
+  {
+    "objectID": "Aula_1.html#lógico-logical",
+    "href": "Aula_1.html#lógico-logical",
+    "title": "Aula 1 Mini curso R",
+    "section": "Lógico (logical)",
+    "text": "Lógico (logical)\n\nx &lt;- TRUE # Não precisa estar entre aspas, é uma palavra especial no R\nx\n\n[1] TRUE\n\nclass(x)\n\n[1] \"logical\"\n\nis.logical(x) # Confere se o objeto é um da classe logical\n\n[1] TRUE\n\ny &lt;- F # Pode ser abreviada\ny\n\n[1] FALSE\n\nclass(y)\n\n[1] \"logical\"\n\nis.logical(y)\n\n[1] TRUE"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
