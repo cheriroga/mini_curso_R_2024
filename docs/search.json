@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Mini Curso R",
     "section": "",
-    "text": "Aulas\nAula 1"
+    "text": "Slide 1"
   },
   {
     "objectID": "Aula_1.html#constat",
@@ -117,5 +117,19 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#slides",
+    "href": "index.html#slides",
+    "title": "Mini Curso R",
+    "section": "",
+    "text": "Slide 1"
+  },
+  {
+    "objectID": "index.html#atividades",
+    "href": "index.html#atividades",
+    "title": "Mini Curso R",
+    "section": "Atividades",
+    "text": "Atividades\nAtividade 1"
   }
 ]

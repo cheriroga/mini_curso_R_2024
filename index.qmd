@@ -1,11 +1,13 @@
 ---
 title: "Mini Curso R"
 toc: false
-format: 
-  html: 
-    background-image: "images/template.png"
+format: html
 ---
 
-# Aulas
+## Slides
 
-[Aula 1](Aula_1.qmd)
+[Slide 1](Aula_1.qmd)
+
+## Atividades
+
+[Atividade 1](https://drive.google.com/file/d/12DmdNRtgxOzc5e-17CrCrBIXeh7hbDyy/view?usp=sharing)
