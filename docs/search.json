@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Mini Curso R",
     "section": "",
-    "text": "Slide 1"
+    "text": "Slide 1\nSlide 2"
   },
   {
     "objectID": "Aula_1.html#constat",
@@ -123,7 +123,7 @@
     "href": "index.html#slides",
     "title": "Mini Curso R",
     "section": "",
-    "text": "Slide 1"
+    "text": "Slide 1\nSlide 2"
   },
   {
     "objectID": "index.html#atividades",
@@ -131,5 +131,229 @@
     "title": "Mini Curso R",
     "section": "Atividades",
     "text": "Atividades\nAtividade 1"
+  },
+  {
+    "objectID": "Aula_2.html#revisão---tipos-de-dados",
+    "href": "Aula_2.html#revisão---tipos-de-dados",
+    "title": "Aula 2 Mini curso R",
+    "section": "REVISÃO - TIPOS DE DADOS",
+    "text": "REVISÃO - TIPOS DE DADOS\n● Numérico: armazena números, tanto inteiros quanto decimais (ponto flutuante).\nExemplo: x &lt;- 5\n● Inteiro (Integer): armazena números inteiros (sem casas decimais).\nExemplo: x &lt;- 5L (o “L” indica um número inteiro)\n● Double (Ponto Flutuante de Precisão Dupla): é usado para armazenar números com casas decimais.\nExemplo: x &lt;- 3.14\n● Lógico (Booleano): armazena valores lógicos, ou seja, TRUE ou FALSE. Usado para fazer verificações de condições ou representações binárias.\nExemplo: flag &lt;- TRUE\n● Caractere (String): armazena sequências de texto, ou seja, palavras ou frases. As strings são sempre cercadas por aspas, simples ou duplas.\nExemplo: name &lt;- “João” ou city &lt;- ‘São Paulo’."
+  },
+  {
+    "objectID": "Aula_2.html#objetos-em-r",
+    "href": "Aula_2.html#objetos-em-r",
+    "title": "Aula 2 Mini curso R",
+    "section": "OBJETOS em R",
+    "text": "OBJETOS em R\nEm R, objetos são as estruturas de dados que armazenam informações, como números, textos, ou tabelas. Quase tudo em R é tratado como um objeto."
+  },
+  {
+    "objectID": "Aula_2.html#principais-tipos-de-objetos",
+    "href": "Aula_2.html#principais-tipos-de-objetos",
+    "title": "Aula 2 Mini curso R",
+    "section": "Principais tipos de objetos",
+    "text": "Principais tipos de objetos\n● Vetores: Coleções de elementos do mesmo tipo (numérico, caractere, lógico, etc.);\n● Matrizes: Arranjos bidimensionais de elementos do mesmo tipo;\n● DataFrames: Tabelas onde cada coluna pode conter diferentes tipos de dados;\n● Listas: Coleções que podem conter diferentes tipos de objetos, como vetores, data frames e até outras listas;\n● Fatores: Usados para representar dados categóricos, como níveis de um fator;\n● Funções: Blocos de código armazenados como objetos que podem ser executados."
+  },
+  {
+    "objectID": "Aula_2.html#características-dos-objetos",
+    "href": "Aula_2.html#características-dos-objetos",
+    "title": "Aula 2 Mini curso R",
+    "section": "Características dos objetos",
+    "text": "Características dos objetos\n● As atribuições vistas na aula anterior (&lt;- ou =) criam objetos;\n● Cada objeto tem classe (ex.: “numeric”, “data.frame”) e atributos (ex.: nomes de colunas em um data frame);\n● Podem ser manipulados com funções adequadas, como str(), class() e summary()."
+  },
+  {
+    "objectID": "Aula_2.html#section",
+    "href": "Aula_2.html#section",
+    "title": "Aula 2 Mini curso R",
+    "section": "",
+    "text": "Objetos em R"
+  },
+  {
+    "objectID": "Aula_2.html#data-structures",
+    "href": "Aula_2.html#data-structures",
+    "title": "Aula 2 Mini curso R",
+    "section": "DATA STRUCTURES",
+    "text": "DATA STRUCTURES\nAs estruturas de dados no R organizam e armazenam informações, sendo fundamentais para análise e manipulação de dados."
+  },
+  {
+    "objectID": "Aula_2.html#principais-data-structures-no-r",
+    "href": "Aula_2.html#principais-data-structures-no-r",
+    "title": "Aula 2 Mini curso R",
+    "section": "Principais Data Structures no R",
+    "text": "Principais Data Structures no R\nVetores: sequência unidimensional de elementos do mesmo tipo (numérico, caractere, lógico, etc.). Formação: atribuição, c( , , ) ou seq( , ,by = ).\nExemplo:\n\nnumeros &lt;- c(10, 20, 30) # Vetor numérico"
+  },
+  {
+    "objectID": "Aula_2.html#principais-data-structures-no-r-1",
+    "href": "Aula_2.html#principais-data-structures-no-r-1",
+    "title": "Aula 2 Mini curso R",
+    "section": "Principais Data Structures no R",
+    "text": "Principais Data Structures no R\nMatrizes: estrutura bidimensional com elementos do mesmo tipo. Formação: matrix(data = , nrow = , ncol = ). Exemplo:\n\n mat &lt;- matrix(1:6, nrow = 2)"
+  },
+  {
+    "objectID": "Aula_2.html#principais-data-structures-no-r-2",
+    "href": "Aula_2.html#principais-data-structures-no-r-2",
+    "title": "Aula 2 Mini curso R",
+    "section": "Principais Data Structures no R",
+    "text": "Principais Data Structures no R\nData Frames: tabela onde as colunas podem conter diferentes tipos de dados. Formação: data.frame(). Exemplo:\n\ndf &lt;- data.frame(nome = c(\"Ana\", \"João\"), idade = c(25, 30))"
+  },
+  {
+    "objectID": "Aula_2.html#principais-data-structures-no-r-3",
+    "href": "Aula_2.html#principais-data-structures-no-r-3",
+    "title": "Aula 2 Mini curso R",
+    "section": "Principais Data Structures no R",
+    "text": "Principais Data Structures no R\nListas: coleções de elementos de diferentes tipos e tamanhos, incluindo vetores, data frames e outras listas. Formação: list(). Exemplo:\n\nlst &lt;- list(vetor = c(1, 2), matriz = matrix(1:4, nrow = 2))"
+  },
+  {
+    "objectID": "Aula_2.html#principais-data-structures-no-r-4",
+    "href": "Aula_2.html#principais-data-structures-no-r-4",
+    "title": "Aula 2 Mini curso R",
+    "section": "Principais Data Structures no R",
+    "text": "Principais Data Structures no R\nFatores: representam dados categóricos, armazenando os níveis de categorias. Formação: factor(). Exemplo:\n\nfator &lt;- factor(c(\"alto\", \"médio\", \"alto\"))"
+  },
+  {
+    "objectID": "Aula_2.html#operadoreslógicos",
+    "href": "Aula_2.html#operadoreslógicos",
+    "title": "Aula 2 Mini curso R",
+    "section": "OPERADORESLÓGICOS",
+    "text": "OPERADORESLÓGICOS\nOs operadores lógicos em R são usados para realizar comparações e avaliar condições. Eles retornam valores lógicos: TRUE ou FALSE."
+  },
+  {
+    "objectID": "Aula_2.html#comparação",
+    "href": "Aula_2.html#comparação",
+    "title": "Aula 2 Mini curso R",
+    "section": "Comparação",
+    "text": "Comparação\n● ==: Igualdade.\n● !=: Diferença.\n● &lt;: Menor que.\n● &gt;: Maior que.\n● &lt;=: Menor ou igual a.\n● &gt;=: Maior ou igual a."
+  },
+  {
+    "objectID": "Aula_2.html#comparação-1",
+    "href": "Aula_2.html#comparação-1",
+    "title": "Aula 2 Mini curso R",
+    "section": "Comparação",
+    "text": "Comparação\nExemplo:\n\n x &lt;- 5\n x == 5\n\n[1] TRUE\n\n x != 3 \n\n[1] TRUE\n\n x &gt; 10 \n\n[1] FALSE"
+  },
+  {
+    "objectID": "Aula_2.html#lógicos-booleanos",
+    "href": "Aula_2.html#lógicos-booleanos",
+    "title": "Aula 2 Mini curso R",
+    "section": "Lógicos (Booleanos)",
+    "text": "Lógicos (Booleanos)\n● &: E lógico (and).\n● |: Ou lógico (or).\n● !: Negação(not).\nExemplo:\n\n x = 7\n x &gt; 5 & x &lt; 10\n\n[1] TRUE"
+  },
+  {
+    "objectID": "Aula_2.html#exercícios",
+    "href": "Aula_2.html#exercícios",
+    "title": "Aula 2 Mini curso R",
+    "section": "EXERCÍCIOS",
+    "text": "EXERCÍCIOS\n\nCrie um vetor chamado salarios com os valores 2500, 3000, 4000. Em seguida, multiplique todos os valores por 1.1 (aumento de 10%) e salve o resultado em um novo objeto chamado salarios_atualizados."
+  },
+  {
+    "objectID": "Aula_2.html#exercícios-1",
+    "href": "Aula_2.html#exercícios-1",
+    "title": "Aula 2 Mini curso R",
+    "section": "EXERCÍCIOS",
+    "text": "EXERCÍCIOS\n\nCrie um vetor nomes com os valores “Ana”, “Bruno”, “Carlos”, e um vetor idades com os valores 28, 35, 40. Combine os dois em um data frame chamado funcionarios usando data.frame()."
+  },
+  {
+    "objectID": "Aula_2.html#exercícios-2",
+    "href": "Aula_2.html#exercícios-2",
+    "title": "Aula 2 Mini curso R",
+    "section": "EXERCÍCIOS",
+    "text": "EXERCÍCIOS\n\nCombase no vetor idades criado acima, identifique se há valores que são maiores que 30."
+  },
+  {
+    "objectID": "Aula_2.html#tipos-de-dados",
+    "href": "Aula_2.html#tipos-de-dados",
+    "title": "Aula 2 Mini curso R",
+    "section": "Tipos de dados",
+    "text": "Tipos de dados\nNumérico: armazena números, tanto inteiros quanto decimais (ponto flutuante).\n\nx &lt;- 5\n\n\nInteiro (Integer): armazena números inteiros (sem casas decimais).\n\nx &lt;- 5L #o \"L\" indica um número inteiro\n\n\n\nDouble (Ponto Flutuante de Precisão Dupla): é usado para armazenar números com casas decimais.\n\nx &lt;- 3.14\n\n\n\nLógico (Booleano): armazena valores lógicos, ou seja, TRUE ou FALSE. Usado para fazer verificações de condições ou representações binárias.\n\nflag &lt;- TRUE\n\n\n\nCaractere (String): armazena sequências de texto, ou seja, palavras ou frases. As strings são sempre cercadas por aspas, simples ou duplas.\n\nname &lt;- \"João\" \n#ou\ncity &lt;- 'São Paulo'"
+  },
+  {
+    "objectID": "Aula_2.html#objetos-em-r-1",
+    "href": "Aula_2.html#objetos-em-r-1",
+    "title": "Aula 2 Mini curso R",
+    "section": "Objetos em R",
+    "text": "Objetos em R\nEm R, objetos são as estruturas de dados que armazenam informações, como números, textos, ou tabelas. Quase tudo em R é tratado como um objeto."
+  },
+  {
+    "objectID": "Aula_2.html#o-que-é-um-objeto",
+    "href": "Aula_2.html#o-que-é-um-objeto",
+    "title": "Aula 2 Mini curso R",
+    "section": "O que é um objeto?",
+    "text": "O que é um objeto?\nEm R, objetos são as estruturas de dados que armazenam informações, como números, textos, ou tabelas. Quase tudo em R é tratado como um objeto."
+  },
+  {
+    "objectID": "Aula_2.html#vetores",
+    "href": "Aula_2.html#vetores",
+    "title": "Aula 2 Mini curso R",
+    "section": "Vetores",
+    "text": "Vetores\nVetores em R são criados utilizando a função c(). Todos os elementos de um vetor devem ser do mesmo tipo. Caso os tipos sejam diferentes, R realiza uma coerção automática para unificar o tipo, seguindo a hierarquia:\n\n\nlógico &lt; inteiro &lt; double &lt; caractere.\n\n\n\n\nx &lt;- c(1, 5, 4, 9, 0)\ntypeof(x)\n\n[1] \"double\"\n\nlength(x)\n\n[1] 5\n\nx &lt;- c(1, 5.4, TRUE, \"hello\")\nx\n\n[1] \"1\"     \"5.4\"   \"TRUE\"  \"hello\"\n\ntypeof(x)\n\n[1] \"character\""
+  },
+  {
+    "objectID": "Aula_2.html#section-1",
+    "href": "Aula_2.html#section-1",
+    "title": "Aula 2 Mini curso R",
+    "section": "",
+    "text": "Objetos em R\n\nEm R, objetos são as estruturas de dados que armazenam informações, como números, textos, ou tabelas. Quase tudo em R é tratado como um objeto."
+  },
+  {
+    "objectID": "Aula_2.html#vetores-o-que-são",
+    "href": "Aula_2.html#vetores-o-que-são",
+    "title": "Aula 2 Mini curso R",
+    "section": "Vetores: o que são?",
+    "text": "Vetores: o que são?\nVetores em R são criados utilizando a função c(). Todos os elementos de um vetor devem ser do mesmo tipo. Caso os tipos sejam diferentes, R realiza uma coerção automática para unificar o tipo, seguindo a hierarquia:\n\n\nlógico &lt; inteiro &lt; double &lt; caractere.\n\n\n\n\nx &lt;- c(1, 5, 4, 9, 0)\ntypeof(x)\n\n[1] \"double\"\n\nlength(x)\n\n[1] 5\n\nx &lt;- c(1, 5.4, TRUE, \"hello\")\nx\n\n[1] \"1\"     \"5.4\"   \"TRUE\"  \"hello\"\n\ntypeof(x)\n\n[1] \"character\""
+  },
+  {
+    "objectID": "Aula_2.html#como-acessar-elementos-de-um-vetor",
+    "href": "Aula_2.html#como-acessar-elementos-de-um-vetor",
+    "title": "Aula 2 Mini curso R",
+    "section": "Como acessar elementos de um vetor?",
+    "text": "Como acessar elementos de um vetor?\nOs elementos de um vetor podem ser acessados usando indexação de vetores. O vetor usado para indexação pode ser lógico, inteiro ou vetor de caracteres.\nUsando vetores inteiros como index\nO index do vector no R começa pelo 1, diferentemente da maioria das linguagens de programação em que o index do vetor começa por 0. . . .\n\nx &lt;- 1:7\n# acessando o 3º elemento\nx[3]    \n\n[1] 3\n\n# acessando o 2º e 4º elemento\nx[c(2, 4)]     \n\n[1] 2 4\n\n# acessando todos menos o 1º elemento\nx[-1]          \n\n[1] 2 3 4 5 6 7\n\n# mas não pode misturar positivos e negativos\nx[c(2, -4)]\n\nError in x[c(2, -4)]: somente 0's podem ser usados junto com subscritos negativos\n\n\nUsando vetores logicos como index\nQuando usamos vetores logicos para indexação, a posição em que o vetor logico é TRUE é retornado. . . .\n\nx &lt;- 1:5\nx[c(TRUE, FALSE, FALSE, TRUE, TRUE)]\n\n[1] 1 4 5\n\n# filtrando com base em condições\nx[x &lt; 0] \n\ninteger(0)\n\nx[x &gt; 0]\n\n[1] 1 2 3 4 5\n\n\nUsando caracteres como index\nEsse tipo de indexação é útil para trabalhar com vetores nomeados.\n\nx &lt;- c(\"first\"=3, \"second\"=0, \"third\"=9)\nnames(x)\n\n[1] \"first\"  \"second\" \"third\" \n\nx[\"second\"]\n\nsecond \n     0"
+  },
+  {
+    "objectID": "Aula_2.html#matrix",
+    "href": "Aula_2.html#matrix",
+    "title": "Aula 2 Mini curso R",
+    "section": "Matrix",
+    "text": "Matrix"
+  },
+  {
+    "objectID": "Aula_2.html#operadores-aritimeticos",
+    "href": "Aula_2.html#operadores-aritimeticos",
+    "title": "Aula 2 Mini curso R",
+    "section": "Operadores Aritimeticos",
+    "text": "Operadores Aritimeticos\n\n\n\n\n\nOperador\nDescrição\n\n\n\n\n+\nadição\n\n\n-\nsubtração\n\n\n*\nmultiplicação\n\n\n/\ndivisão\n\n\n^\nexponenciação\n\n\n%%\nmódulo (x mod y)\n\n\n%/%\ndivisão inteira"
+  },
+  {
+    "objectID": "Aula_2.html#operadores-logicos",
+    "href": "Aula_2.html#operadores-logicos",
+    "title": "Aula 2 Mini curso R",
+    "section": "Operadores Logicos",
+    "text": "Operadores Logicos\n\n\n\n\n\nOperador\nDescrição\n\n\n\n\n&lt;\nmenor que\n\n\n&lt;=\nmenor ou igual a\n\n\n&gt;\nmaior que\n\n\n&gt;=\nmaior ou igual a\n\n\n==\nexatamente igual a\n\n\n!=\ndiferente de\n\n\n!x\nnão x\n\n\n**x\nx elevado à potência de y\n\n\nx & y\nx E y (AND lógico)\n\n\nisTRUE(x)\nverifica se x é TRUE"
+  },
+  {
+    "objectID": "Aula_2.html#exemplo-1-comparação-de-números",
+    "href": "Aula_2.html#exemplo-1-comparação-de-números",
+    "title": "Aula 2 Mini curso R",
+    "section": "Exemplo 1: Comparação de números",
+    "text": "Exemplo 1: Comparação de números\n\n# Comparação de números usando operadores lógicos\na &lt;- 5\nb &lt;- 10\n\n# Verificar se a é menor que b\na &lt; b\n\n[1] TRUE\n\n# Verificar se a é maior ou igual a b\na &gt;= b\n\n[1] FALSE\n\n# Verificar se a é exatamente igual a b\na == b\n\n[1] FALSE"
+  },
+  {
+    "objectID": "Aula_2.html#exemplo-2-uso-do-operador-x-negação",
+    "href": "Aula_2.html#exemplo-2-uso-do-operador-x-negação",
+    "title": "Aula 2 Mini curso R",
+    "section": "Exemplo 2: Uso do operador !x (negação)",
+    "text": "Exemplo 2: Uso do operador !x (negação)\n\n# Negação de um valor lógico\nx &lt;- TRUE\ny &lt;- FALSE\n\n# Negar x\n!x\n\n[1] FALSE\n\n# Negar y\n!y\n\n[1] TRUE"
+  },
+  {
+    "objectID": "Aula_2.html#exemplo-3-uso-de-para-operação-lógica-and",
+    "href": "Aula_2.html#exemplo-3-uso-de-para-operação-lógica-and",
+    "title": "Aula 2 Mini curso R",
+    "section": "Exemplo 3: Uso de & para operação lógica (AND)",
+    "text": "Exemplo 3: Uso de & para operação lógica (AND)\n\n# Operação lógica (AND)\nx &lt;- TRUE\ny &lt;- FALSE\n\n# Verificar se x E y\nx & y  # FALSE (pois y é FALSE)\n\n[1] FALSE\n\n# Verificar se x E TRUE\nx & TRUE  # TRUE (pois x é TRUE)\n\n[1] TRUE"
+  },
+  {
+    "objectID": "Aula_2.html",
+    "href": "Aula_2.html",
+    "title": "Aula 2 Mini curso R",
+    "section": "",
+    "text": "Numérico: armazena números, tanto inteiros quanto decimais (ponto flutuante).\n\nx &lt;- 5\n\n. . .\nInteiro (Integer): armazena números inteiros (sem casas decimais).\n\nx &lt;- 5L #o \"L\" indica um número inteiro\n\n. . .\nDouble (Ponto Flutuante de Precisão Dupla): é usado para armazenar números com casas decimais.\n\nx &lt;- 3.14\n\n. . .\nLógico (Booleano): armazena valores lógicos, ou seja, TRUE ou FALSE. Usado para fazer verificações de condições ou representações binárias.\n\nflag &lt;- TRUE\n\n. . .\nCaractere (String): armazena sequências de texto, ou seja, palavras ou frases. As strings são sempre cercadas por aspas, simples ou duplas.\n\nname &lt;- \"João\" \n#ou\ncity &lt;- 'São Paulo'"
   }
 ]

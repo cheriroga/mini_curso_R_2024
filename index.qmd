@@ -8,6 +8,8 @@ format: html
 
 [Slide 1](Aula_1.qmd)
 
+[Slide 2](Aula_2.qmd)
+
 ## Atividades
 
 [Atividade 1](https://drive.google.com/file/d/12DmdNRtgxOzc5e-17CrCrBIXeh7hbDyy/view?usp=sharing)

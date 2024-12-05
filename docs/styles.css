@@ -1,1 +1,27 @@
 /* css styles */
+
+.center {
+  text-align: center;
+}
+
+.middle-t {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 35px;
+}
+
+.middle {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.center-t {
+  text-align: center;
+  font-size:40px;
+}

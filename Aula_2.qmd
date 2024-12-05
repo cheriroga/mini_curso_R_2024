@@ -1,0 +1,709 @@
+---
+title: "Aula 2 Mini curso R"
+author: " CONSTAT - Consultoria Estatítica"
+date: "2024-12-05"
+format: 
+  revealjs:
+    
+    transition: slide
+    incremental: true
+    theme: "simple"
+    css: styles.css
+    background-image: "images/template.png"
+    slide_number: true
+    code_block_background: false
+fontsize: 25px
+editor: visual
+---
+
+# Revisão da Aula Anterior
+
+## Tipos de dados
+
+**Numérico**: armazena números, tanto inteiros quanto decimais (ponto flutuante).
+
+```{r, echo=TRUE}
+x <- 5
+```
+
+. . .
+
+**Inteiro** (Integer): armazena números inteiros (sem casas decimais).
+
+```{r, echo=TRUE}
+x <- 5L #o "L" indica um número inteiro
+```
+
+. . .
+
+**Double** (Ponto Flutuante de Precisão Dupla): é usado para armazenar números com casas decimais.
+
+```{r, echo=TRUE}
+x <- 3.14
+```
+
+. . .
+
+**Lógico** (Booleano): armazena valores lógicos, ou seja, TRUE ou FALSE. Usado para fazer verificações de condições ou representações binárias.
+
+```{r, echo=TRUE}
+flag <- TRUE
+```
+
+. . .
+
+**Caractere** (String): armazena sequências de texto, ou seja, palavras ou frases. As strings são sempre cercadas por aspas, simples ou duplas.
+
+```{r, echo=TRUE}
+name <- "João" 
+#ou
+city <- 'São Paulo'
+```
+
+# Duvídas?
+
+# Data Structures
+
+------------------------------------------------------------------------
+
+**Vetores**
+
+Vetores em R são criados utilizando a função `c()`. Todos os elementos de um vetor devem ser do mesmo tipo. Caso os tipos sejam diferentes, R realiza uma coerção automática para unificar o tipo, seguindo a hierarquia:
+
+. . .
+
+**lógico \< inteiro \< double \< caractere**.
+
+. . .
+
+```{r, echo=TRUE}
+x <- c(1, 5, 4, 9, 0)
+typeof(x)
+
+length(x)
+x <- c(1, 5.4, TRUE, "hello")
+x
+typeof(x)
+```
+
+------------------------------------------------------------------------
+
+**Como acessar elementos de um vetor?**
+
+Os elementos de um vetor podem ser acessados usando indexação de vetores. O vetor usado para indexação pode ser lógico, inteiro ou vetor de caracteres.
+
+. . .
+
+**Usando inteiros como index**
+
+O index do vetor no R começa pelo **1**, diferentemente da maioria das linguagens de programação em que o index do vetor começa por **0**.
+
+```{r, echo=TRUE, error=TRUE}
+x <- 1:7
+# acessando o 3º elemento
+x[3]    
+# acessando o 2º e 4º elemento
+x[c(2, 4)]     
+# acessando todos menos o 1º elemento
+x[-1]          
+# mas não pode misturar positivos e negativos
+x[c(2, -4)]
+```
+
+------------------------------------------------------------------------
+
+**Usando booleanos como index**
+
+Quando usamos vetores logicos para indexação, a posição em que o vetor logico é `TRUE` é retornado.
+
+```{r, echo=TRUE}
+x <- 1:5
+x[c(TRUE, FALSE, FALSE, TRUE, TRUE)]
+# filtrando com base em condições
+x[x < 0] 
+x[x > 0]
+```
+
+. . .
+
+**Usando caracteres como index**
+
+Esse tipo de indexação é útil para trabalhar com vetores nomeados.
+
+```{r, echo=TRUE}
+x <- c("first"=3, "second"=0, "third"=9)
+names(x)
+x["second"]
+```
+
+------------------------------------------------------------------------
+
+**Como mudar um vetor no R?**
+
+Podemos mudar um vetor usando o operador `<-`.
+
+```{r, echo=TRUE}
+x <- c(-3,-2,-1,0,1,2)
+# mudando o 2º elemento
+x[2] <- 0; x        
+# mudando os elementos menores que 0
+x[x<0] <- 5; x   
+# transformar x em apenas os 4 primeiros elementos de x
+x <- x[1:4]; x
+```
+
+------------------------------------------------------------------------
+
+**Listas**
+
+Uma lista é uma estrutura de dados flexível que pode conter elementos de diferentes tipos, como números, caracteres, vetores, matrizes e até outras listas.
+
+. . .
+
+**Como criar uma lista?**
+
+Podemos criar uma lista usando a função `list()`.
+
+```{r, echo=TRUE}
+x <- list("a" = 2.5, "b" = TRUE, "c" = 1:3)
+x
+```
+
+. . .
+
+Aqui, criamos uma lista `x`, com três componentes de tipos de dados **double**, **lógico** e **vetor inteiro**, respectivamente.
+
+A estrutura da lista acima pode ser examinada com a função `str()`.
+
+```{r, echo=TRUE}
+str(x)
+```
+
+------------------------------------------------------------------------
+
+**Como acessar os componentes de uma lista**
+
+As listas podem ser acessadas de forma semelhante aos vetores. Vetores inteiros, lógicos ou de caracteres podem ser usados para indexação.
+
+```{r, echo=TRUE, eval=FALSE}
+x <- list(name = "John", age = 19, speaks = c("English", "French"))
+
+# acessa elementos por nome
+x$name
+x$age
+x$speaks
+
+# acessa elementos pelo index inteiro
+x[c(1, 2)]
+x[-2]
+
+# acessa elementos pelo index logico
+x[c(TRUE, FALSE, FALSE)]
+
+# acessa elementos pelo index caractere
+x[c("age", "speaks")]
+```
+
+------------------------------------------------------------------------
+
+A indexação com `[` nos dará uma sublista, não o conteúdo dentro do componente. Para recuperar o conteúdo, precisamos usar `[[`.
+
+No entanto, essa abordagem nos permitirá acessar apenas um único componente por vez.
+
+```{r, echo=TRUE}
+x <- list(name = "John", age = 19, speaks = c("English", "French"))
+
+x["age"]
+
+typeof(x["age"])
+
+x[["age"]]
+
+typeof(x[["age"]])
+```
+
+------------------------------------------------------------------------
+
+Uma alternativa ao `[[`, que é frequentemente usada ao acessar o conteúdo de uma lista, é o operador `$`. Ambos são iguais, exceto que o `$` pode fazer uma correspondência parcial nos rótulos.
+
+```{r, echo=TRUE}
+x <- list(name = "John", age = 19, speaks = c("English", "French"))
+
+x$name
+
+x$age
+
+x$speaks
+
+y <- list(n = "Alice", a = 25, s = c("Spanish", "Italian"))
+
+y$n
+
+y$a
+
+y$s
+```
+
+------------------------------------------------------------------------
+
+**Como modificar uma lista?**
+
+Podemos alterar os componentes de uma lista por meio de reatribuição. Podemos escolher qualquer uma das técnicas de acesso a componentes discutidas acima para modificá-la.
+
+```{r, echo=TRUE}
+x <- list(name = "John", age = 19, speaks = c("English", "French"))
+
+# acessar o elemento e mudar ele
+x[["name"]] <- "Clair"
+
+x
+```
+
+------------------------------------------------------------------------
+
+**Como adicionar um componente a uma lista?**
+
+Adicionar um componente é simples, basta definir um valor usando o nome do novo componente.
+
+```{r, echo=TRUE}
+x <- list(name = "Clair", age = 19, speaks = c("English", "French"))
+
+# adicionar um nome componente com '[[' e dando um valor a ele 
+x[["married"]] <- FALSE
+
+x
+```
+
+------------------------------------------------------------------------
+
+**Como deletar um componente de uma lista?**
+
+Para deletar um componente defina ele como `NULL`
+
+```{r, echo=TRUE}
+x <- list(name = "Clair", age = 19, speaks = c("English", "French"))
+
+x$age <- NULL
+
+str(x)
+```
+
+------------------------------------------------------------------------
+
+**Matriz**
+
+No R, matriz é uma estrutura de dados bidimencional. A matriz se assemelha a um vetor mas contendo o atributo das dimenções.
+
+------------------------------------------------------------------------
+
+**Como criar uma matriz no R?**
+
+Uma matriz é criada usando a função `matrix()`. As dimenções da matriz podem ser definidas com os argumentos `nrow` e `ncol`.
+
+```{r, echo=TRUE}
+matrix(1:9, nrow = 3, ncol = 3)
+```
+
+. . .
+
+Por padrão, as matrizes são preenchidas pelas colunas, porém isso pode ser mudado com o argumento `byrow=TRUE`.
+
+```{r, echo=TRUE}
+matrix(1:9, nrow=3, byrow=TRUE)
+```
+
+. . .
+
+É possível nomear as linhas e colunas da matriz usando o argumento `dimnames` com **2** listas.
+
+```{r, echo=TRUE}
+x <- matrix(1:9, nrow = 3, dimnames = list(c("X","Y","Z"), c("A","B","C")))
+x
+```
+
+Esses nomes podem ser acessados ou mudados com a ajuda de duas funções `colnames` e `rownames`
+
+------------------------------------------------------------------------
+
+**Criando uma matriz usando cbind() e rbind()**
+
+Outra forma de criar uma matriz é usando as funções `cbind` e `rbind` para "ligar colunas" e "ligar linhas", respectivamente.
+
+. . .
+
+```{r, echo=TRUE}
+cbind(c(1,2,3),c(4,5,6))
+```
+
+O `cbind` é usado para combinar os vetores `c(1, 2, 3)` e `c(4, 5, 6)` por coluna. A matriz resultante tem duas colunas, onde a primeira contém os elementos do primeiro vetor, e a segunda coluna contém os elementos do segundo vetor.
+
+. . .
+
+```{r, echo=TRUE}
+rbind(c(1,2,3),c(4,5,6))
+```
+
+O `rbind` combina os vetores por linha. Assim, a matriz resultante tem duas linhas, onde a primeira linha contém os elementos do primeiro vetor e a segunda linha contém os elementos do segundo vetor.
+
+------------------------------------------------------------------------
+
+**Criando uma matriz usando dim()**
+
+É possível criar uma matriz a partir de um vetor definindo sua dimenção usando a função `dim()`.
+
+```{r, echo=TRUE}
+x <- c(1,2,3,4,5,6)
+
+dim(x) <- c(2,3)
+x
+```
+
+------------------------------------------------------------------------
+
+**Como acessar os elementos de uma matriz?**
+
+Podemos acessar os elementos de uma matriz usando o método de indexação com colchetes `[]`. Os elementos podem ser acessados como `var[linha, coluna]`. Aqui, **linha** e **coluna** são vetores.
+
+------------------------------------------------------------------------
+
+**Usando inteiros como index**
+
+Especificamos os números das linhas e das colunas como vetores e os usamos para indexação.
+
+Se algum campo dentro dos colchetes for deixado em branco, ele seleciona todos.
+
+Podemos usar números inteiros negativos para especificar as linhas ou colunas que devem ser excluídas.
+
+```{r, echo=TRUE}
+x <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), nrow = 3, ncol = 3, byrow = TRUE)
+# selecionando as linhas 1 e 2, e as colunas 2 e 3
+x[c(1,2),c(2,3)]    
+
+# deixando o segundo campo em branco seleciona todas as colunas
+x[c(3,2),]    
+
+# deixando tanto a linha quanto a coluna seleciona toda a matriz
+x[,]    
+
+# seleciona todas as linhas menos a primeira
+x[-1,]    
+```
+
+------------------------------------------------------------------------
+
+**Usando booleanos como index**
+
+Dois vetores lógicos podem ser usados para indexar uma matriz. Nessa situação, as linhas e colunas onde o valor é `TRUE` são retornadas. Esses vetores de indexação são reciclados, se necessário, e podem ser combinados com vetores inteiros.
+
+```{r, echo=TRUE}
+x <- matrix(c(4, 6, 1, 8, 0, 2, 3, 7, 9), nrow = 3, ncol = 3, byrow = TRUE)
+x[c(TRUE,FALSE,TRUE),c(TRUE,TRUE,FALSE)]
+
+```
+
+. . .
+
+A indexação logica também é usada para filtrar elementos da matriz
+
+```{r, echo=TRUE}
+# selecionar elementos maiores que 5
+x[x>5]    
+# selecionar elementos pares
+x[x%%2 == 0]  
+```
+
+------------------------------------------------------------------------
+
+**Usando caracteres como index**
+
+A indexação com um vetor de caracteres é possível para matrizes com linhas ou colunas nomeadas. Isso pode ser combinado com indexação inteira ou lógica.
+
+```{r, echo=TRUE}
+# cria uma matriz com elementos e nomes de colunas
+x <- matrix(c(4, 6, 1, 8, 0, 2, 3, 7, 9), nrow = 3, ncol = 3, byrow = TRUE, dimnames = list(NULL, c("A", "B", "C")))
+
+# seleciona apenas a coluna A
+x[,"A"]
+
+# seleciona as linhas 2 a 3 e as colunas A e C
+x[2:3, c("A", "C")]
+```
+
+------------------------------------------------------------------------
+
+**Como modificar uma matriz?**
+
+Podemos combinar o operador de atribuição com os métodos mencionados anteriormente para acessar elementos de uma matriz e modificá-la.
+
+```{r, echo=TRUE}
+x <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), nrow = 3, ncol = 3, byrow = TRUE)
+
+# modifica um unico elemento
+x[2,2] <- 10
+x    
+# modifica elementos menores que 5
+x[x<5] <- 0   
+x
+```
+
+------------------------------------------------------------------------
+
+**Transpor uma matriz**
+
+Uma operação comum com matrizes é transpor a matriz. Isso pode ser feito com a função `t()`.
+
+```{r, echo=TRUE}
+x <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), nrow = 3, ncol = 3, byrow = TRUE)
+
+t(x)
+```
+
+------------------------------------------------------------------------
+
+**Data Frames**
+
+Um **data frame** é uma estrutura de dados bidimensional. É um caso especial de uma lista, onde cada componente tem o mesmo comprimento. Cada componente forma a coluna, e o conteúdo do componente forma as linhas.
+
+. . .
+
+**Como criar um data frame?**
+
+Podemos criar um data frame usando a função `data.frame()`.
+
+```{r, echo=TRUE}
+# criar um data frame
+x <- data.frame("SN" = 1:2, "Idade" = c(21, 15), "Nome" = c("John", "Dora"))
+
+# imprimir a estrutura de x
+str(x)
+```
+
+------------------------------------------------------------------------
+
+**Como acessar os componentes de um data frame?**
+
+Os componentes de um data frame podem ser acessados como uma lista ou como matrix.
+
+**Acessando como uma lista**
+
+```{r, echo=TRUE}
+x <- data.frame("SN" = 1:2, "Age" = c(21, 15), "Name" = c("John", "Dora"), stringsAsFactors = FALSE)
+
+print(x["Name"])
+print(x$Name)
+print(x[["Name"]])
+print(x[[3]])
+```
+
+------------------------------------------------------------------------
+
+**Acessando como uma matrix**
+
+Os data frames podem ser acessados como uma matriz, fornecendo índices para as linhas e colunas.
+
+```{r, echo=TRUE, eval=FALSE}
+# Criar o data frame
+trees <- data.frame(
+  Girth = c(8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11, 11, 11.1, 11.2),
+  Height = c(70, 65, 63, 72, 81, 83, 66, 75, 80, 75),
+  Volume = c(10.3, 10.3, 10.2, 16.4, 18.8, 19.7, 15.6, 18.2, 22.6, 19.9)
+)
+
+# Selecionar as linhas 2 e 3 de trees
+trees[2:3, ]
+
+# Selecionar as linhas com altura maior que 82
+trees[trees$Height > 82, ]
+
+# Selecionar a coluna "Height" das linhas 10 a 12
+trees[10:12, "Height"]
+```
+
+------------------------------------------------------------------------
+
+**Como modificar um data frame**
+
+Os data frames podem ser modificados da mesma forma que modificamos matrizes, através de reatribuição.
+
+```{r, echo=TRUE, eval=FALSE}
+# Criar o data frame
+x <- data.frame(
+  SN = c(1, 2),
+  Age = c(21, 15),
+  Name = c("John", "Dora")
+)
+
+# Atualizar o valor de Age na primeira linha para 20
+x[1, "Age"] <- 20
+
+```
+
+------------------------------------------------------------------------
+
+**Como adicionar componentes a um data frame?**
+
+As linhas podem ser adicionadas a um data frame usando a função rbind().
+
+```{r, echo=TRUE, eval=FALSE}
+# Criar o data frame
+x <- data.frame(
+  SN = c(1, 2),
+  Age = c(20, 15),
+  Name = c("John", "Dora")
+)
+
+# Criar uma nova linha e adicionar ao data frame
+new_row <- list(SN = 1, Age = 16, Name = "Paul")
+x <- rbind(x, new_row)
+
+```
+
+------------------------------------------------------------------------
+
+**Como deletar componentes de um data frame?**
+
+As colunas de um data frame podem ser deletadas atribuindo NULL a elas.
+
+```{r, echo=TRUE, eval=FALSE}
+# Criar o data frame
+x <- data.frame(
+  SN = c(1, 2),
+  Age = c(20, 15),
+  Name = c("John", "Dora"),
+  State = c("NY", "FL")
+)
+
+# Remover a coluna "State" do data frame
+x$State <- NULL
+```
+
+------------------------------------------------------------------------
+
+**Fator**
+
+Fator é uma estrutura de dados usada para campos que assumem apenas um número pré-definido e finito de valores (dados categóricos).
+
+. . .
+
+**Como criar um fator em R?**
+
+```{r, echo=TRUE}
+x <- factor(c("single", "married", "married", "single"))
+
+x <- factor(c("single", "married", "married", "single"), levels = c("single", "married", "divorced"))
+x
+```
+
+------------------------------------------------------------------------
+
+**Como acessar os componentes de um fator?**
+
+Acessar os componentes de um fator é muito semelhante ao acesso a vetores.
+
+```{r, echo=TRUE}
+x <- factor(c("single", "married", "married", "single"))
+print(x)
+
+print(x[3])
+print(x[c(2, 4)])
+print(x[-1])
+print(x[c(TRUE, FALSE, FALSE, TRUE)])
+```
+
+------------------------------------------------------------------------
+
+**Como modificar um fator?**
+
+Os componentes de um fator podem ser modificados usando simples atribuições. No entanto, não podemos escolher valores fora dos seus níveis pré-definidos.
+
+```{r, echo=TRUE}
+x <- factor(c("single", "married", "married", "single"), levels = c("single", "married", "divorced"))
+print(x)
+
+x[2] <- "divorced"
+print(x)
+
+x[3] <- "widowed"
+print(x)
+```
+
+# Operadores Lógicos
+
+## Operadores Aritimeticos
+
+```{r}
+operadores_aritimeticos <- data.frame(
+  Operador = c("+", "-", "*", "/", "^", "%%", "%/%"),
+  Descrição = c("adição", "subtração", "multiplicação", "divisão", "exponenciação", "módulo (x mod y)", "divisão inteira")
+)
+
+knitr::kable(operadores_aritimeticos, "html") |>
+  kableExtra::kable_styling("striped", full_width = F)
+```
+
+## Operadores Logicos
+
+```{r}
+operadores_logicos <- data.frame(
+  Operador = c("<", "<=", ">", ">=", "==", "!=", "!x", "**x", "x & y", "isTRUE(x)"),
+  Descrição = c("menor que", "menor ou igual a", "maior que", "maior ou igual a", "exatamente igual a", "diferente de", "não x", "x elevado à potência de y", "x E y (AND lógico)", "verifica se x é TRUE")
+)
+
+knitr::kable(operadores_logicos, "html") |>
+  kableExtra::kable_styling("striped", full_width = F)
+```
+
+## Exemplo 1: Comparação de números
+
+```{r, echo=TRUE}
+# Comparação de números usando operadores lógicos
+a <- 5
+b <- 10
+
+# Verificar se a é menor que b
+a < b
+
+# Verificar se a é maior ou igual a b
+a >= b
+
+# Verificar se a é exatamente igual a b
+a == b
+```
+
+## Exemplo 2: Uso do operador !x (negação)
+
+```{r, echo=TRUE}
+# Negação de um valor lógico
+x <- TRUE
+y <- FALSE
+
+# Negar x
+!x
+
+# Negar y
+!y
+
+```
+
+## Exemplo 3: Uso de & para operação lógica (AND)
+
+```{r, echo=TRUE}
+# Operação lógica (AND)
+x <- TRUE
+y <- FALSE
+
+# Verificar se x E y
+x & y  # FALSE (pois y é FALSE)
+
+# Verificar se x E TRUE
+x & TRUE  # TRUE (pois x é TRUE)
+
+```
+
+# EXERCÍCIOS
+
+1.  Crie um vetor chamado salarios com os valores 2500, 3000, 4000. Em seguida, multiplique todos os valores por 1.1 (aumento de 10%) e salve o resultado em um novo objeto chamado salarios_atualizados. . . .
+
+2.  Crie um vetor nomes com os valores "Ana", "Bruno", "Carlos", e um vetor idades com os valores 28, 35, 40. Combine os dois em um data frame chamado funcionarios usando data.frame(). . . .
+
+3.  Combase no vetor idades criado acima, identifique se há valores que são maiores que 30.
