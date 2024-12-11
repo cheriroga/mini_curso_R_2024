@@ -4,12 +4,24 @@ toc: false
 format: html
 ---
 
-## Slides
+## Slides das Aulas
 
 [Slide 1](Aula_1.qmd)
 
 [Slide 2](Aula_2.qmd)
 
+[Slide 3](Aula_3.qmd)
+
 ## Atividades
 
 [Atividade 1](https://drive.google.com/file/d/12DmdNRtgxOzc5e-17CrCrBIXeh7hbDyy/view?usp=sharing)
+
+[Atividade 2](https://drive.google.com/file/d/1mQx908kDQ5uDWuMRF6pMugFWZQ6Nx86Z/view?usp=sharing)
+
+## Bases de Dados
+
+[Base Aula 3](https://drive.google.com/file/d/1ioh-klEamGtay_X6L4RMaVSARBuflyfX/view?usp=sharing)
+
+## Scripts das Aulas
+
+[Script Aula 3](https://drive.google.com/file/d/1jXPKTJp_pB2U9VFE0BimXmyK26N0CbSz/view?usp=sharing)

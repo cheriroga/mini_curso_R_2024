@@ -1,0 +1,298 @@
+---
+title: "Aula 3 - Mini Curso R"
+author: "CONSTAT - Consultoria Estatística"
+format: 
+  revealjs:
+    transition: slide
+    incremental: true
+    theme: "simple"
+    css: styles.css
+    background-image: "images/template.png"
+    slide_number: true
+    code_block_background: false
+fontsize: 30px
+editor: visual
+---
+
+# Dúvidas
+
+# Pacotes e bibliotecas
+
+-   O que são?;
+
+-   Diferença entre um pacote e uma biblioteca;
+
+-   5 principais bibliotecas:
+
+## **1. dplyr**:
+
+-   **Propósito**: Manipulação de dados;
+-   **Principais funções**:
+    -   `filter()`: Seleciona linhas com base em condições;
+
+    -   `select()`: Escolhe colunas específicas;
+
+    -   `mutate()`: Cria ou modifica colunas;
+
+    -   `summarize()`: Calcula estatísticas descritivas (como média e soma);
+
+    -   `group_by()`: Agrupa dados para análises.
+-   **Destaque**: Uso de uma sintaxe clara com o operador `%>%` (pipe);
+-   **Uso ideal**: Para preparar e resumir dados de forma legível.
+
+## **2. ggplot2**
+
+-   **Propósito**: Visualização de dados;
+
+-   **Base teórica**: Baseado na gramática dos gráficos (The Grammar of Graphics);
+
+-   **Principais funções**:
+
+    -   `ggplot()`: Inicia o gráfico;
+
+    -   `geom_point()`: Gráficos de dispersão;
+
+    -   `geom_bar()`: Gráficos de barras;
+
+    -   `geom_line()`: Gráficos de linhas;
+
+    -   `facet_wrap()`: Divide gráficos por categorias.
+
+-   **Destaque**: Extensibilidade e personalização detalhada;
+
+-   **Uso ideal**: Para criar gráficos esteticamente agradáveis e informativos.
+
+## **3. tidyr**
+
+-   **Propósito**: Organização e transformação de dados;
+
+-   **Principais funções**:
+
+    -   `pivot_longer()`: Converte dados de formato largo para longo;
+
+    -   `pivot_wider()`: Converte dados de formato longo para largo;
+
+    -   `separate()`: Divide uma coluna em várias;
+
+    -   `unite()`: Junta várias colunas em uma só;
+
+-   **Destaque**: Facilita a limpeza e reestruturação de dados;
+
+-   **Uso ideal**: Para preparar dados antes de análises.
+
+## **4. readr**
+
+-   **Propósito**: Importação de dados;
+
+-   **Principais funções**:
+
+    -   `read_csv()`: Lê arquivos CSV;
+
+    -   `read_tsv()`: Lê arquivos TSV (tab-separated values);
+
+    -   `write_csv()`: Exporta dados para CSV.
+
+-   **Destaque**: Rápido, fácil de usar e com tratamento automático de tipos de dados;
+
+-   **Uso ideal**: Para carregar arquivos de texto/tabulares no R.
+
+## **5. data.table**
+
+-   **Propósito**: Manipulação rápida de grandes datasets;
+
+-   **Principais funções**:
+
+    -   Sintaxe `[i, j, by]`: Combina seleção de linhas (`i`), operações em colunas (`j`) e agrupamento (`by`);
+
+    -   `fread()`: Importação rápida de dados;
+
+    -   `setkey()`: Criação de índices para acelerar buscas;
+
+-   **Destaque**: Alta eficiência e desempenho com grandes volumes de dados;
+
+-   **Uso ideal**: Quando o desempenho é crítico ou se trabalha com conjuntos de dados massivos.
+
+## **6. Extra: esquisser**
+
+-   **Propósito**: Criar gráficos interativos de forma visual, sem necessidade de código, com base no pacote `ggplot2`.
+
+-   **Características principais**:
+
+    -   Interface gráfica para selecionar dados e personalizar gráficos.
+
+    -   Gera o código `ggplot2` automaticamente, permitindo aprendizado e ajustes.
+
+    -   Suporte a filtros e agrupamentos diretamente na interface.
+
+-   **Tipos de gráficos suportados**:
+
+    -   Gráficos de barras, dispersão, linhas, histogramas e boxplots.
+
+-   **Destaque**: Ideal para iniciantes ou para criação rápida de gráficos exploratórios;
+
+-   **Uso ideal**: Quando você quer explorar dados visualmente ou criar gráficos rápidos sem escrever código.
+
+# Chat GPT
+
+Como usar o chat gpt para fazer análises descritivas em R
+
+# Programando com dados
+
+Base de dados: pesquisa de mercado realizada pela CONSTAT em agosto.
+
+Nome: respostas.csv
+
+``` r
+#Importação de bibliotecas
+install.packages("dplyr")
+install.packages("ggplot2")
+install.packages("janitor")
+install.packages("skimr")
+```
+
+``` r
+#bibliotecas que vamos usar
+library(dplyr)
+library(ggplot2)
+library(janitor)
+library(skimr)
+```
+
+## Importando dados
+
+-   **Importante:** a forma de importar depende de onde está sua base e qual a forma do arquivo.
+
+-   Baixar a base de dados "respostas.csv" que está no class;
+
+### Se o arquivo estiver na pasta do repositório
+
+-   Adicionar na pasta do seu repositório;
+
+    ``` r
+    dados <- read.csv("respostas.csv")
+    head(dados) #visualizar as 10 primeiras linhas do data frame
+    ```
+
+## Se o arquivo não estiver no Repositório
+
+-   Copiar o caminho
+
+    ``` r
+    dados <- read.csv("/Users/beatrizmilz/Documents/Curso-R/livro-material")
+    #Forma não indicada pois impede a reprodutibilidade, BOAS PRÁTICAS
+    ```
+
+-   Se o arquivo estiver em .xlsx;
+
+    ``` r
+    library(readxl) #para importar em .xlsx ou .xls
+    dados <-read_xlsx("seu_arquivo.xlsx")
+    dados <- read_excel("seu_arquivo.xlsx") #auto detecta a extensão do arquivo
+    ```
+
+-   Exemplo: Se eu tiver uma planilha com varias abas:
+
+    ``` r
+    dados <- read_excel(caminho_datasets, sheet = 2) #sheet indica qual a aba para importar
+    dados <- read_excel(caminho_datasets, sheet = 'chickwts') #com o nome da aba
+    ```
+
+## Limpeza e preparação
+
+### Nome das variáveis
+
+``` r
+library(tidyverse)
+library(janitor)
+```
+
+``` r
+names(dados) #visualizar os nomes das variáves
+dados <- clean_names(dados) #"limpar nomes das variáveis
+```
+
+### Dados duplicados
+
+``` r
+#dados duplicados
+dados[duplicated(dados), ]
+```
+
+### Linhas vazias
+
+``` r
+faltantes <- is.na(dados) #matrix dos dados faltantes
+apply(faltantes, 2, sum) #soma por coluna de dados faltantes
+```
+
+### Resumo e classificação
+
+``` r
+summary(dados) #informações descritivas de todas as variáveis
+#outra opção
+skimr::skim(dados) #tras uma visualização completa dos dados
+str(dados) #ver classificacao de todas as colunas
+#Alterando a classificação
+dados$Qual.sua.idade..Ex...20. <- as.numeric(dados$Qual.sua.idade..Ex...20.)
+#tabela de frequência
+tabyl(dados,coluna) #mostra o percentil 
+table(dados$coluna)
+```
+
+## Identificar tipo e classe de todas as variáveis da base
+
+Abaixo está a lista das funções para mudança de tipo.
+
+-   **as.character** - converte para variável texto.
+
+-   **as.numeric** - converte para variável número.
+
+-   **as.factor** - converte para variável categórica.
+
+-   **as.integer** - converte para variável inteiro.
+
+-   **as.Date** - converte para variável data.
+
+-   **as.POSIXct** - converte para variável data e hora completa.
+
+## Transformação de variáveis quantitativas
+
+É possível criar novas variáveis quantitativas a partir de outras variáveis. A criação de novas variáveis pode ajudar a capturar relações complexas entre os dados e fornecer insights adicionais. Uma nova variável que pode ser criada é a razão entre saturados e aromáticos, que pode fornecer informações sobre a composição do petróleo.
+
+``` r
+#mutate()
+#R base
+dados$novacoluna <- ...
+```
+
+## Discretizar dados
+
+Dependendo da natureza dos dados e das análises que vão ser realizadas, é necessário discretizar(categorizar) os dados. Nesse casos, iremos discretizar o ponto de fluidez
+
+``` r
+#Exemplo de outro data frame
+
+dados1$ponto_de_fluidez_categoria <- cut(dados1$ponto_de_fluidez,
+
+  breaks = c(-Inf, 0, 10, Inf),  # Definindo os limites das categorias
+
+  labels = c("Baixo", "Medio", "Alto"),
+
+  right = TRUE  # Inclui o valor de limite superior na categoria
+
+)
+```
+
+### Filtrando a base de dados
+
+Criando um novo data frame a partir de alguma informação
+
+``` r
+dados_jardimcamburi <- dados %>% filter(Bairro.onde.comprou.o.imóvel. == "Jardim Camburi")
+```
+
+# Gráficos
+
+# Exercícios
+
+Aplicação das funções.

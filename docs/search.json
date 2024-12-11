@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Mini Curso R",
     "section": "",
-    "text": "Slide 1\nSlide 2"
+    "text": "Slide 1\nSlide 2\nSlide 3"
   },
   {
     "objectID": "Aula_1.html#constat",
@@ -130,7 +130,7 @@
     "href": "index.html#atividades",
     "title": "Mini Curso R",
     "section": "Atividades",
-    "text": "Atividades\nAtividade 1"
+    "text": "Atividades\nAtividade 1\nAtividade 2"
   },
   {
     "objectID": "Aula_2.html#revisão---tipos-de-dados",
@@ -355,5 +355,110 @@
     "title": "Aula 2 Mini curso R",
     "section": "",
     "text": "Numérico: armazena números, tanto inteiros quanto decimais (ponto flutuante).\n\nx &lt;- 5\n\n. . .\nInteiro (Integer): armazena números inteiros (sem casas decimais).\n\nx &lt;- 5L #o \"L\" indica um número inteiro\n\n. . .\nDouble (Ponto Flutuante de Precisão Dupla): é usado para armazenar números com casas decimais.\n\nx &lt;- 3.14\n\n. . .\nLógico (Booleano): armazena valores lógicos, ou seja, TRUE ou FALSE. Usado para fazer verificações de condições ou representações binárias.\n\nflag &lt;- TRUE\n\n. . .\nCaractere (String): armazena sequências de texto, ou seja, palavras ou frases. As strings são sempre cercadas por aspas, simples ou duplas.\n\nname &lt;- \"João\" \n#ou\ncity &lt;- 'São Paulo'"
+  },
+  {
+    "objectID": "Aula_3.html#dplyr",
+    "href": "Aula_3.html#dplyr",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "1. dplyr:",
+    "text": "1. dplyr:\n\nPropósito: Manipulação de dados;\nPrincipais funções:\n\nfilter(): Seleciona linhas com base em condições;\nselect(): Escolhe colunas específicas;\nmutate(): Cria ou modifica colunas;\nsummarize(): Calcula estatísticas descritivas (como média e soma);\ngroup_by(): Agrupa dados para análises.\n\nDestaque: Uso de uma sintaxe clara com o operador %&gt;% (pipe);\nUso ideal: Para preparar e resumir dados de forma legível."
+  },
+  {
+    "objectID": "Aula_3.html#ggplot2",
+    "href": "Aula_3.html#ggplot2",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "2. ggplot2",
+    "text": "2. ggplot2\n\nPropósito: Visualização de dados;\nBase teórica: Baseado na gramática dos gráficos (The Grammar of Graphics);\nPrincipais funções:\n\nggplot(): Inicia o gráfico;\ngeom_point(): Gráficos de dispersão;\ngeom_bar(): Gráficos de barras;\ngeom_line(): Gráficos de linhas;\nfacet_wrap(): Divide gráficos por categorias.\n\nDestaque: Extensibilidade e personalização detalhada;\nUso ideal: Para criar gráficos esteticamente agradáveis e informativos."
+  },
+  {
+    "objectID": "Aula_3.html#tidyr",
+    "href": "Aula_3.html#tidyr",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "3. tidyr",
+    "text": "3. tidyr\n\nPropósito: Organização e transformação de dados;\nPrincipais funções:\n\npivot_longer(): Converte dados de formato largo para longo;\npivot_wider(): Converte dados de formato longo para largo;\nseparate(): Divide uma coluna em várias;\nunite(): Junta várias colunas em uma só;\n\nDestaque: Facilita a limpeza e reestruturação de dados;\nUso ideal: Para preparar dados antes de análises."
+  },
+  {
+    "objectID": "Aula_3.html#readr",
+    "href": "Aula_3.html#readr",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "4. readr",
+    "text": "4. readr\n\nPropósito: Importação de dados;\nPrincipais funções:\n\nread_csv(): Lê arquivos CSV;\nread_tsv(): Lê arquivos TSV (tab-separated values);\nwrite_csv(): Exporta dados para CSV.\n\nDestaque: Rápido, fácil de usar e com tratamento automático de tipos de dados;\nUso ideal: Para carregar arquivos de texto/tabulares no R."
+  },
+  {
+    "objectID": "Aula_3.html#data.table",
+    "href": "Aula_3.html#data.table",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "5. data.table",
+    "text": "5. data.table\n\nPropósito: Manipulação rápida de grandes datasets;\nPrincipais funções:\n\nSintaxe [i, j, by]: Combina seleção de linhas (i), operações em colunas (j) e agrupamento (by);\nfread(): Importação rápida de dados;\nsetkey(): Criação de índices para acelerar buscas;\n\nDestaque: Alta eficiência e desempenho com grandes volumes de dados;\nUso ideal: Quando o desempenho é crítico ou se trabalha com conjuntos de dados massivos."
+  },
+  {
+    "objectID": "Aula_3.html#extra-esquisser",
+    "href": "Aula_3.html#extra-esquisser",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "6. Extra: esquisser",
+    "text": "6. Extra: esquisser\n\nPropósito: Criar gráficos interativos de forma visual, sem necessidade de código, com base no pacote ggplot2.\nCaracterísticas principais:\n\nInterface gráfica para selecionar dados e personalizar gráficos.\nGera o código ggplot2 automaticamente, permitindo aprendizado e ajustes.\nSuporte a filtros e agrupamentos diretamente na interface.\n\nTipos de gráficos suportados:\n\nGráficos de barras, dispersão, linhas, histogramas e boxplots.\n\nDestaque: Ideal para iniciantes ou para criação rápida de gráficos exploratórios;\nUso ideal: Quando você quer explorar dados visualmente ou criar gráficos rápidos sem escrever código."
+  },
+  {
+    "objectID": "Aula_3.html#importando-dados",
+    "href": "Aula_3.html#importando-dados",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "Importando dados",
+    "text": "Importando dados\n\nImportante: a forma de importar depende de onde está sua base e qual a forma do arquivo.\nBaixar a base de dados “respostas.csv” que está no class;\n\nSe o arquivo estiver na pasta do repositório\n\nAdicionar na pasta do seu repositório;\ndados &lt;- read.csv(\"respostas.csv\")\nhead(dados) #visualizar as 10 primeiras linhas do data frame"
+  },
+  {
+    "objectID": "Aula_3.html#se-o-arquivo-não-estiver-no-repositório",
+    "href": "Aula_3.html#se-o-arquivo-não-estiver-no-repositório",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "Se o arquivo não estiver no Repositório",
+    "text": "Se o arquivo não estiver no Repositório\n\nCopiar o caminho\ndados &lt;- read.csv(\"/Users/beatrizmilz/Documents/Curso-R/livro-material\")\n#Forma não indicada pois impede a reprodutibilidade, BOAS PRÁTICAS\nSe o arquivo estiver em .xlsx;\nlibrary(readxl) #para importar em .xlsx ou .xls\ndados &lt;-read_xlsx(\"seu_arquivo.xlsx\")\ndados &lt;- read_excel(\"seu_arquivo.xlsx\") #auto detecta a extensão do arquivo\nExemplo: Se eu tiver uma planilha com varias abas:\ndados &lt;- read_excel(caminho_datasets, sheet = 2) #sheet indica qual a aba para importar\ndados &lt;- read_excel(caminho_datasets, sheet = 'chickwts') #com o nome da aba"
+  },
+  {
+    "objectID": "Aula_3.html#limpeza-e-preparação",
+    "href": "Aula_3.html#limpeza-e-preparação",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "Limpeza e preparação",
+    "text": "Limpeza e preparação\nNome das variáveis\nlibrary(tidyverse)\nlibrary(janitor)\nnames(dados) #visualizar os nomes das variáves\ndados &lt;- clean_names(dados) #\"limpar nomes das variáveis\nDados duplicados\n#dados duplicados\ndados[duplicated(dados), ]\nLinhas vazias\nfaltantes &lt;- is.na(dados) #matrix dos dados faltantes\napply(faltantes, 2, sum) #soma por coluna de dados faltantes\nResumo e classificação\nsummary(dados) #informações descritivas de todas as variáveis\n#outra opção\nskimr::skim(dados) #tras uma visualização completa dos dados\nstr(dados) #ver classificacao de todas as colunas\n#Alterando a classificação\ndados$Qual.sua.idade..Ex...20. &lt;- as.numeric(dados$Qual.sua.idade..Ex...20.)\n#tabela de frequência\ntabyl(dados,coluna) #mostra o percentil \ntable(dados$coluna)"
+  },
+  {
+    "objectID": "Aula_3.html#identificar-tipo-e-classe-de-todas-as-variáveis-da-base",
+    "href": "Aula_3.html#identificar-tipo-e-classe-de-todas-as-variáveis-da-base",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "Identificar tipo e classe de todas as variáveis da base",
+    "text": "Identificar tipo e classe de todas as variáveis da base\nAbaixo está a lista das funções para mudança de tipo.\n\nas.character - converte para variável texto.\nas.numeric - converte para variável número.\nas.factor - converte para variável categórica.\nas.integer - converte para variável inteiro.\nas.Date - converte para variável data.\nas.POSIXct - converte para variável data e hora completa."
+  },
+  {
+    "objectID": "Aula_3.html#transformação-de-variáveis-quantitativas",
+    "href": "Aula_3.html#transformação-de-variáveis-quantitativas",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "Transformação de variáveis quantitativas",
+    "text": "Transformação de variáveis quantitativas\nÉ possível criar novas variáveis quantitativas a partir de outras variáveis. A criação de novas variáveis pode ajudar a capturar relações complexas entre os dados e fornecer insights adicionais. Uma nova variável que pode ser criada é a razão entre saturados e aromáticos, que pode fornecer informações sobre a composição do petróleo.\n#mutate()\n#R base\ndados$novacoluna &lt;- ..."
+  },
+  {
+    "objectID": "Aula_3.html#discretizar-dados",
+    "href": "Aula_3.html#discretizar-dados",
+    "title": "Aula 3 - Mini Curso R",
+    "section": "Discretizar dados",
+    "text": "Discretizar dados\nDependendo da natureza dos dados e das análises que vão ser realizadas, é necessário discretizar(categorizar) os dados. Nesse casos, iremos discretizar o ponto de fluidez\n#Exemplo de outro data frame\n\ndados1$ponto_de_fluidez_categoria &lt;- cut(dados1$ponto_de_fluidez,\n\n  breaks = c(-Inf, 0, 10, Inf),  # Definindo os limites das categorias\n\n  labels = c(\"Baixo\", \"Medio\", \"Alto\"),\n\n  right = TRUE  # Inclui o valor de limite superior na categoria\n\n)\nFiltrando a base de dados\nCriando um novo data frame a partir de alguma informação\ndados_jardimcamburi &lt;- dados %&gt;% filter(Bairro.onde.comprou.o.imóvel. == \"Jardim Camburi\")"
+  },
+  {
+    "objectID": "index.html#slides-das-aulas",
+    "href": "index.html#slides-das-aulas",
+    "title": "Mini Curso R",
+    "section": "",
+    "text": "Slide 1\nSlide 2\nSlide 3"
+  },
+  {
+    "objectID": "index.html#bases-de-dados",
+    "href": "index.html#bases-de-dados",
+    "title": "Mini Curso R",
+    "section": "Bases de Dados",
+    "text": "Bases de Dados\nBase Aula 3"
+  },
+  {
+    "objectID": "index.html#scripts-das-aulas",
+    "href": "index.html#scripts-das-aulas",
+    "title": "Mini Curso R",
+    "section": "Scripts das Aulas",
+    "text": "Scripts das Aulas\nScript Aula 3"
   }
 ]
