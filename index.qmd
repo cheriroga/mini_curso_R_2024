@@ -18,6 +18,8 @@ format: html
 
 [Atividade 2](https://drive.google.com/file/d/1mQx908kDQ5uDWuMRF6pMugFWZQ6Nx86Z/view?usp=sharing)
 
+[Atividade Final](https://drive.google.com/file/d/1Qn3fYQdU3rqSPqjWCDAG90CGD9iz0bdP/view?usp=sharing)
+
 ## Bases de Dados
 
 [Base Aula 3](https://drive.google.com/file/d/1ioh-klEamGtay_X6L4RMaVSARBuflyfX/view?usp=sharing)
@@ -25,3 +27,5 @@ format: html
 ## Scripts das Aulas
 
 [Script Aula 3](https://drive.google.com/file/d/1jXPKTJp_pB2U9VFE0BimXmyK26N0CbSz/view?usp=sharing)
+
+[Script Aula 4](https://drive.google.com/file/d/1pjShiN0oW-BQFYBl8Jnupwc-LK0HnSOR/view?usp=sharing)
